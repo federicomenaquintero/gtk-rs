@@ -1,4 +1,4 @@
-mod drawing;
+od drawing;
 pub mod image;
 
 use std::cell::RefCell;
@@ -86,7 +86,7 @@ fn build_ui(application: &gtk::Application) {
 
                 // Draw an arc with a weirdly calculated radius
                 image.with_surface(|surface| {
-                    let cr = Context::new(surface);
+                    let cr = Context::new(surface).expect("Can't create Cairo context");
                     draw_slow(&cr, delay, x, y, 1.2_f64.powi(((n as i32) << thread_num) % 32));
                     surface.flush();
                 });

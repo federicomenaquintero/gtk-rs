@@ -108,7 +108,7 @@ mod test {
     use tempfile::tempfile;
 
     fn draw(surface: &Surface) {
-        let cr = Context::new(surface);
+        let cr = Context::new(surface).expect("Can't create Cairo context");
 
         // Note: Not using RGBA here as PS doesn't natively support
         // semi-transparency and Cairo would then embed a rasterized bitmap
