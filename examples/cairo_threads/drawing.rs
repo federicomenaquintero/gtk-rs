@@ -45,7 +45,7 @@ pub fn draw_image_if_dirty(
     if clip_x1 >= x + w || clip_y1 >= y + h || clip_x2 <= x || clip_y2 <= y {
         return;
     }
-    cr.set_source_surface(image, x, y);
+    cr.set_source_surface(image, x, y).unwrap();
     cr.paint();
 
     // Release the reference to the surface again
